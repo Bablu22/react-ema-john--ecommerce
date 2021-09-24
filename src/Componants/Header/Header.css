@@ -1,0 +1,39 @@
+.header{
+    text-align: center;
+}
+.header img{
+    width: 300px;
+    margin: auto;
+    margin-top: 20px;
+}
+.nav-bar{
+    background-color: rgb(20, 20, 20);
+    color: white;
+    padding: 15px 0;
+    
+    margin: auto;
+}
+.nav-bar ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.nav-bar li a{
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+    font-size: 18px;
+    padding: 10px;
+}
+.nav-bar li a:hover{
+   background-color: teal;
+   border-radius: 2px;
+}
+
+.search-bar{
+    background-color: rgb(44, 43, 43);
+    padding: 20px;
+
+}
