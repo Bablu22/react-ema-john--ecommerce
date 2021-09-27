@@ -4,11 +4,22 @@ import './Shop.css'
 import '../Header/Header.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+
+const getFromLocalStorage = () => {
+    let list = localStorage.getItem('cart');
+    if (list) {
+        return JSON.parse(localStorage.getItem('cart'))
+    }
+    else {
+        return []
+    }
+}
+
 const Shop = () => {
     const element = <FontAwesomeIcon icon={faShoppingCart} />
     const [products, setProducts] = useState([]);
     const [searchProduct, setSearchProduct] = useState([]);
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState(getFromLocalStorage());
 
     useEffect(() => {
         fetch("https://raw.githubusercontent.com/ProgrammingHero1/ema-john-simple-resources/master/fakeData/products.JSON")
@@ -16,7 +27,7 @@ const Shop = () => {
             .then(data => {
                 setProducts(data)
                 setSearchProduct(data)
-            } )
+            })
     }, [])
 
     const searchHandle = event => {
@@ -26,6 +37,9 @@ const Shop = () => {
 
     }
 
+    useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }, [cart])
 
 
 
@@ -48,7 +62,9 @@ const Shop = () => {
         }
     }
 
-   
+    const clearCart = () => {
+       setCart([])
+    }
 
     return (
         <div>
@@ -78,7 +94,7 @@ const Shop = () => {
                     <p>shipping: ${shipping.toFixed(2)}</p>
                     <p>Tax: ${tax.toFixed(2)}</p>
                     <p>Total: ${total.toFixed(2)}</p>
-
+                    <button onClick={clearCart} className="btn btn-primary">Clear</button>
                 </div>
             </div>
         </div>
