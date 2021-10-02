@@ -63,7 +63,7 @@ const Shop = () => {
     }
 
     const clearCart = () => {
-       setCart([])
+        setCart([])
     }
 
     return (
