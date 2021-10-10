@@ -2,7 +2,7 @@ import React from 'react';
 import Rating from 'react-rating';
 
 const ReviewProduct = (props) => {
-    const { img, name, seller, stock, star, price, shipping } = props.item
+    const { name, seller, stock, star, price, shipping } = props.item
     return (
         <div>
             <div className="card mb-3">

@@ -1,0 +1,28 @@
+.login-btn{
+    background-color: rgb(233, 110, 130) !important;
+    width: 100%;
+}
+
+input:focus-visible{
+   outline: none !important;
+}
+
+
+.log-icon{
+    border: none;
+    background-color: black;
+    color: white;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+
+@media screen and (max-width:640px) {
+    .login-form{
+        width: 90% !important;
+        
+    }
+}

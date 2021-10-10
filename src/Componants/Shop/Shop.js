@@ -4,6 +4,7 @@ import './Shop.css'
 import '../Header/Header.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
 
 const getFromLocalStorage = () => {
     let list = localStorage.getItem('cart');
@@ -94,10 +95,12 @@ const Shop = () => {
                     <p>shipping: ${shipping.toFixed(2)}</p>
                     <p>Tax: ${tax.toFixed(2)}</p>
                     <p>Total: ${total.toFixed(2)}</p>
-                    <button onClick={clearCart} className="btn btn-primary">Clear</button>
+                    <Link to="/review">
+                        <button className="btn btn-primary">Review</button>
+                    </Link>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ReviewProduct from './ReviewProduct/ReviewProduct';
 
 
@@ -69,6 +70,9 @@ const OrderReview = () => {
                     <p>shipping: ${shipping.toFixed(2)}</p>
                     <p>Tax: ${tax.toFixed(2)}</p>
                     <p>Total: ${total.toFixed(2)}</p>
+
+                    <Link className="btn btn-dark" to="/shipping">Proceed Shhipping</Link>
+
                 </div>
             </div>
         </div>
